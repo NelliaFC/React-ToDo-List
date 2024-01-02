@@ -1,6 +1,6 @@
 
 import Todo from "./components/Todo";
-
+const taskList = props.tasks?.map((task) => task.name)
 function App(props) {
   return (
     <div className="todoapp stack-large">
