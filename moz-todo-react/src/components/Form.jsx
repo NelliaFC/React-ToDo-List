@@ -1,19 +1,19 @@
-import {useState} from "react";
+import { useState } from "react";
 
-function Form(props){
+function Form(props) {
   const [name, setName] = useState("");
- 
+
   function handleChange(event) {
     setName(event.target.value);
   }
-    function handleSubmit(event) {
-        event.preventDefault();
-        props.addTask("Say Hello!");
-        setName("")
-      }
-      
 
- return (
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.addTask(name);
+    setName("");
+  }
+
+  return (
     <form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
@@ -34,6 +34,6 @@ function Form(props){
       </button>
     </form>
   );
-
 }
+
 export default Form;
