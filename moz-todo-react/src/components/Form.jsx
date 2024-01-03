@@ -1,15 +1,15 @@
-import {useState} from "react"
+import {useState} from "react";
 
 function Form(props){
+  const [name, setName] = useState("");
+ 
   function handleChange(event) {
-    event.preventDefault();
-    props.addTask(name);
-    setName("");
+    setName(event.target.value);
   }
-const [name, setName] = useState("");
     function handleSubmit(event) {
         event.preventDefault();
         props.addTask("Say Hello!");
+        setName("")
       }
       
 
